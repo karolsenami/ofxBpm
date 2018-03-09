@@ -155,7 +155,6 @@ void ofxBpm::detectBpm() {
 
 float ofxBpm::timeToBpm(float time) {
 }
-}
 
 float ofxBpm::getBpm() const{
     
