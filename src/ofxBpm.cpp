@@ -139,6 +139,24 @@ void ofxBpm::setBpm(float bpm){
     }
 }
 
+void ofxBpm::toggleBpmDetect() {
+    isDetectingBpm = !isDetectingBpm;
+    tappedBpmTimes.clear();
+}
+
+void ofxBpm::detectBpm() {
+    float newBpm;
+    for(int i=0; i<tappedBpmTimes.size(); i++) {
+        newBpm += tappedBpmTimes[i];
+    }
+    newBpm /= tappedBpmTimes.size();
+    
+}
+
+float ofxBpm::timeToBpm(float time) {
+}
+}
+
 float ofxBpm::getBpm() const{
     
     return bpm;

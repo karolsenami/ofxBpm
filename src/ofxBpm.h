@@ -44,14 +44,20 @@ public:
     void setBpm(float bpm);
     float getBpm() const;
     
+    //bpm detection
+    void toggleBpmDetect();
+    void detectBpm();
+    float timeToBpm(float time);
+    vector<float> tappedBpmTimes;
+    float previousTime, newTime;
+    
     void setBeatPerBar(int beatPerBar);
     
     ofEvent<void> beatEvent;
 
     float bpm;
     int barIndex;
-    bool isTick;
-    bool isPlaying;
+    bool isTick, isPlaying, isDetectingBpm;
     int countOfTick;
     long totalTime;
     long durationOfTick;
